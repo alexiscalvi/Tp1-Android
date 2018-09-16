@@ -26,6 +26,40 @@
             android:textAllCaps="true"
             android:layout_alignParentTop="true" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollview"
+            android:layout_below="@id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/background">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/movie" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+        <LinearLayout
+            android:layout_below="@+id/scrollview"
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+        </LinearLayout>
 
     </RelativeLayout>
 
