@@ -5,10 +5,10 @@
     <string name="a_propos">A propos du film</string>
     <string name="table_left_titre">Titre</string>
     <string name="table_right_titre">Les évadés</string>
-    <string name="table_right_eng">Titre d\'origine</string>
-    <string name="table_left_eng">The Shawshank Redemption</string>
-    <string name="table_right_desc">Description</string>
-    <string name="table_left_desc">Un banquier est comdamné à perpétuité pour le meutre de sa femme. Il se retrouve alors dans la prison de Shawshank..</string>
-    <string name="table_right_key">Mots clés</string>
-    <string name="table_left_key">Evasion, Classique</string>
+    <string name="table_left_eng">Titre d\'origine</string>
+    <string name="table_right_eng">The Shawshank Redemption</string>
+    <string name="table_left_desc">Description</string>
+    <string name="table_right_desc">Un banquier est comdamné à perpétuité pour le meutre de sa femme. Il se retrouve alors dans la prison de Shawshank..</string>
+    <string name="table_left_key">Mots clés</string>
+    <string name="table_right_key">Evasion, Classique</string>
 </resources>
