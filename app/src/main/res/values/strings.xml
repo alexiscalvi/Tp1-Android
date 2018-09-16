@@ -11,4 +11,7 @@
     <string name="table_right_desc">Un banquier est comdamné à perpétuité pour le meutre de sa femme. Il se retrouve alors dans la prison de Shawshank..</string>
     <string name="table_left_key">Mots clés</string>
     <string name="table_right_key">Evasion, Classique</string>
+    <string name="share">Partager</string>
+    <string name="like">Aimer</string>
+    <string name="comment">Commenter</string>
 </resources>
