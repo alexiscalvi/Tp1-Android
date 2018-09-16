@@ -14,4 +14,6 @@
     <string name="share">Partager</string>
     <string name="like">Aimer</string>
     <string name="comment">Commenter</string>
+    <string name="list_commentaires">Liste de commentaires</string>
+    <string name="say">Say something..</string>
 </resources>

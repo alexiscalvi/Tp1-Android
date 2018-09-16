@@ -25,11 +25,13 @@
             android:textColor="@color/my_yellow"
             android:textStyle="bold"
             android:textAllCaps="true"
+            android:background="@color/background2"
             android:layout_alignParentTop="true" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
             android:id="@+id/scrollview"
             android:layout_below="@id/header">
 
@@ -37,10 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/background">
+                >
 
                 <ImageView
                     android:id="@+id/image"
+                    android:background="@color/background2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/movie" />
@@ -58,6 +61,7 @@
 
                 <TableLayout
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -172,6 +176,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:paddingLeft="2dp"
+                        android:textColor="@color/my_white"
                         android:textSize="14sp"
                         android:drawableLeft="@drawable/share"
                         android:text="@string/share"
@@ -183,6 +188,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:paddingLeft="2dp"
+                        android:textColor="@color/my_white"
                         android:textSize="14sp"
                         android:drawableLeft="@drawable/like"
                         android:text="@string/like"
@@ -194,12 +200,21 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:paddingLeft="2dp"
+                        android:textColor="@color/my_white"
                         android:textSize="14sp"
                         android:drawableLeft="@drawable/comment"
                         android:text="@string/comment"
                         android:layout_margin="10dp" />
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:text="@string/list_commentaires"
+                    android:textColor="@color/my_white"
+                    android:gravity="center"
+                    android:background="@color/champ_comments"/>
 
             </LinearLayout>
 
@@ -209,12 +224,34 @@
 
 
         <LinearLayout
-            android:layout_below="@+id/scrollview"
+
+
             android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/background"
+            android:layout_alignParentBottom="true"
             android:weightSum="100">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/say"
+                android:textColorHint="@color/my_white"
+                android:layout_weight="85"
+                android:textColor="@color/my_white"
+                />
+
+            <ImageButton
+                android:layout_height="match_parent"
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:src="@drawable/send"
+                android:layout_weight="15"
+                android:background="@color/background"/>
 
         </LinearLayout>
 
