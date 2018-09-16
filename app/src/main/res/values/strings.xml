@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tp1</string>
+    <string name="titre">titre</string>
+    <string name="description">-</string>
 </resources>
