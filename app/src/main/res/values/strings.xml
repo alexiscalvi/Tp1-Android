@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Tp1</string>
     <string name="titre">fiche de film</string>
+    <string name="retour">Retour</string>
     <string name="description">-</string>
     <string name="a_propos">A propos du film</string>
     <string name="table_left_titre">Titre</string>
