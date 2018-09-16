@@ -282,6 +282,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/say"
+                android:id="@+id/champtext"
                 android:textColorHint="@color/my_white"
                 android:layout_weight="85"
                 android:textColor="@color/my_white"
