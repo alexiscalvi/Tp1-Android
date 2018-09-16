@@ -14,46 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background">
+
         <TextView
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/description"
+            android:text="@string/titre"
             android:gravity="center"
             android:textColor="@color/my_yellow"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:layout_alignParentTop="true" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/header"
-            android:layout_above="@+id/footer">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/background">
-                
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/movie"
-                    android:contentDescription="@string/description"
-                    />
-            </LinearLayout>
-
-        </ScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/footer"
-            android:orientation="horizontal"
-            android:weightSum="100">
-        </LinearLayout>
 
 
     </RelativeLayout>
