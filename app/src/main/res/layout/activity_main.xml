@@ -217,6 +217,7 @@
                         android:paddingLeft="2dp"
                         android:textColor="@color/my_white"
                         android:textSize="14sp"
+                        android:id="@+id/share"
                         android:drawableLeft="@drawable/share"
                         android:text="@string/share"
                         android:layout_margin="10dp" />
@@ -229,6 +230,7 @@
                         android:paddingLeft="2dp"
                         android:textColor="@color/my_white"
                         android:textSize="14sp"
+                        android:id="@+id/like"
                         android:drawableLeft="@drawable/like"
                         android:text="@string/like"
                         android:layout_margin="10dp" />
@@ -241,6 +243,7 @@
                         android:paddingLeft="2dp"
                         android:textColor="@color/my_white"
                         android:textSize="14sp"
+                        android:id="@+id/comment"
                         android:drawableLeft="@drawable/comment"
                         android:text="@string/comment"
                         android:layout_margin="10dp" />
