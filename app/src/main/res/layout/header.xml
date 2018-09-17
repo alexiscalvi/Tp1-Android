@@ -34,6 +34,7 @@
         android:id="@+id/close"
         android:layout_width="0dp"
         android:src="@drawable/closeyellow"
+        android:background="@color/background"
         android:layout_weight="10"/>
 
 </LinearLayout>

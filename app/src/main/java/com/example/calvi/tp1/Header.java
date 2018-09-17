@@ -14,11 +14,14 @@ public class Header extends LinearLayout {
     }
 
     public Header(Context context, @Nullable AttributeSet attrs) {
+
         super(context, attrs);
+        initialize(context, attrs);
     }
 
     public Header(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initialize(context, attrs);
     }
 
     private void initialize(Context context, AttributeSet attrs) {
