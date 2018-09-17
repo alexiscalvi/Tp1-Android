@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginRight="5dp"
     android:weightSum="100"
     android:background="@color/background2">
 
@@ -24,6 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="70"
+        android:textAllCaps="true"
         android:text="@string/titre"
         android:textColor="@color/my_yellow"
         android:textSize="24sp"
@@ -34,7 +34,7 @@
         android:id="@+id/close"
         android:layout_width="0dp"
         android:src="@drawable/closeyellow"
-        android:background="@color/background"
+        android:background="@color/background2"
         android:layout_weight="10"/>
 
 </LinearLayout>
