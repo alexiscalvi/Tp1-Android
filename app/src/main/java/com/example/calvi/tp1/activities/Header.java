@@ -1,4 +1,4 @@
-package com.example.calvi.tp1;
+package com.example.calvi.tp1.activities;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.calvi.tp1.R;
 
 public class Header extends LinearLayout {
 

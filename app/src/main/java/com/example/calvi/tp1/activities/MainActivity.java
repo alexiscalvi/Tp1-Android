@@ -1,4 +1,4 @@
-package com.example.calvi.tp1;
+package com.example.calvi.tp1.activities;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.calvi.tp1.R;
 
 public class MainActivity extends AppCompatActivity {
 
