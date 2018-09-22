@@ -16,7 +16,7 @@
         android:background="@color/background">
 
 
-        <com.example.calvi.tp1.Header
+        <com.example.calvi.tp1.entities.Header
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             app:mainTitle="@string/titre"
             app:backTitle="@string/retour"/>
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="40dp"
@@ -207,18 +207,30 @@
 
                 </LinearLayout>
 
-                <TextView
+                <android.support.v4.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:text="@string/list_commentaires"
                     android:textColor="@color/my_white"
                     android:gravity="center"
-                    android:background="@color/champ_comments"/>
+                    android:background="@color/champ_comments"
+                    >
+
+                    <android.support.v7.widget.RecyclerView
+
+                        android:id="@+id/recyclerViewComments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/black">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </android.support.v4.widget.NestedScrollView>
 
             </LinearLayout>
 
 
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
 
 
