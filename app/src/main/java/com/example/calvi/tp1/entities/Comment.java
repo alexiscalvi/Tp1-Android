@@ -5,36 +5,36 @@ import com.example.calvi.tp1.interfaces.Entity;
 public class Comment implements Entity {
 
     private String auteur;
-    private String image;
-    private String comment;
+    private int image;
+    private String content;
 
-    public Comment(String auteur, String image, String comment) {
+    public Comment(String auteur, int image, String content) {
         this.auteur = auteur;
         this.image = image;
-        this.comment = comment;
+        this.content = content;
     }
 
     public void setAuteur(String auteur) {
         this.auteur = auteur;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getAuteur() {
         return auteur;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public String getComment() {
-        return comment;
+    public String getContent() {
+        return content;
     }
 }

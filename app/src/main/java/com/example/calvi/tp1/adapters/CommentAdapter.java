@@ -13,12 +13,12 @@ import com.example.calvi.tp1.interfaces.RecyclerViewManager;
 
 public class CommentAdapter extends RecyclerView.Adapter {
 
-    private RecyclerViewManager recyclerViewManager;
+    private RecyclerViewManager manager;
 
     public void setRecyclerViewManager(RecyclerViewManager manager) {
-        this.recyclerViewManager = manager;
-        System.out.print("ouuiiiiiiiiiii " + manager.getNumberOfEntities());
+        this.manager = manager;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -29,13 +29,13 @@ public class CommentAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        CommentViewHolder vh = (CommentViewHolder) viewHolder;
-        Comment comment = (Comment) recyclerViewManager.getEntities().get(i);
+        CommentViewHolder vh = (CommentViewHolder)viewHolder;
+        Comment comment = (Comment) manager.getEntities().get(i);
         vh.layoutForComment(comment);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return manager.getNumberOfEntities();
     }
 }
