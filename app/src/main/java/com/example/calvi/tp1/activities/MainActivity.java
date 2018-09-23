@@ -1,19 +1,19 @@
 package com.example.calvi.tp1.activities;
 
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
+import android.text.Editable;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.calvi.tp1.R;
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
         ViewCompat.setNestedScrollingEnabled(listViewComments, false);
 
         listViewComments.setNestedScrollingEnabled(true);
-        CommentAdapter adapter = new CommentAdapter();
-        adapter.setRecyclerViewManager(this);
-        listViewComments.setAdapter(adapter);
+        final CommentAdapter commentAdapter = new CommentAdapter();
+        commentAdapter.setRecyclerViewManager(this);
+        listViewComments.setAdapter(commentAdapter);
         listViewComments.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -102,11 +102,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Editable commentText = champText.getText();
+                listComments.add(new Comment("Pierre", 1, commentText.toString()));
+                commentAdapter.notifyItemInserted(listComments.size()-1);
+
+              
+                /*
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setMessage(champText.getText());
                 champText.setText("");
                 AlertDialog popUp = builder.create();
-                popUp.show();
+                popUp.show();*/
             }
         });
 
