@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
                 listComments.add(new Comment("Pierre", 1, commentText.toString()));
                 commentAdapter.notifyItemInserted(listComments.size()-1);
 
-              
+
                 /*
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setMessage(champText.getText());
