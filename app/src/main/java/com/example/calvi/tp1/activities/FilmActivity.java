@@ -12,6 +12,7 @@ import com.example.calvi.tp1.entities.Film;
 import com.example.calvi.tp1.entities.Lettre;
 import com.example.calvi.tp1.interfaces.Entity;
 import com.example.calvi.tp1.interfaces.RecyclerViewManager;
+import com.example.calvi.tp1.managers.MovieManager;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -40,11 +41,14 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
         listViewLettres.setAdapter(lettreAdapter);
         listViewLettres.setLayoutManager(new LinearLayoutManager(this));
 */
+
+
         listFilms.add(new Film("Test", "dsghfds"));
         listFilms.add(new Film("Poi", "dsghfds"));
         listFilms.add(new Film("Rs", "dsghfds"));
         listFilms.add(new Film("Test", "dsghfds"));
         listFilms.add(new Film("Test", "dsghfds"));
+        MovieManager.getInstance().setListFilm(listFilms);
 
 
         RecyclerView listViewFilms = findViewById(R.id.recyclerViewFilms);
@@ -57,11 +61,11 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
 
     @Override
     public ArrayList<Entity> getEntities() {
-        return listFilms;
+        return MovieManager.getInstance().getMovies();
     }
 
     @Override
     public int getNumberOfEntities() {
-        return listFilms.size();
+        return MovieManager.getInstance().getMovies().size();
     }
 }
