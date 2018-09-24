@@ -14,4 +14,8 @@ public class Category implements Entity {
         return this.nom;
     }
 
+    @Override
+    public int getId() {
+        return 0;
+    }
 }

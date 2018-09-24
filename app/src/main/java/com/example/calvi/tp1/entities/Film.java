@@ -7,10 +7,20 @@ import com.example.calvi.tp1.interfaces.Entity;
 public class Film implements Entity {
     private String titre;
     private String description;
+    private int id;
 
-    public Film(String titre, String description) {
+    public Film(String titre, String description, int id) {
         this.titre = titre;
         this.description = description;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitre() {

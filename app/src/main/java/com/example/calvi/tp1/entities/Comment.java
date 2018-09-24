@@ -37,4 +37,9 @@ public class Comment implements Entity {
     public String getContent() {
         return content;
     }
+
+    @Override
+    public int getId() {
+        return 0;
+    }
 }

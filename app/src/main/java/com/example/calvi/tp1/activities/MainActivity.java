@@ -20,8 +20,10 @@ import android.widget.TextView;
 import com.example.calvi.tp1.R;
 import com.example.calvi.tp1.adapters.CommentAdapter;
 import com.example.calvi.tp1.entities.Comment;
+import com.example.calvi.tp1.entities.Film;
 import com.example.calvi.tp1.interfaces.Entity;
 import com.example.calvi.tp1.interfaces.RecyclerViewManager;
+import com.example.calvi.tp1.managers.MovieManager;
 
 import java.util.ArrayList;
 
@@ -29,12 +31,20 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements RecyclerViewManager {
 
     private ArrayList<Entity> listComments = new ArrayList<Entity>();
+    private int ID_FILM;
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Intent i = getIntent();
+        ID_FILM = i.getIntExtra("ID_FILM", 0);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        onResume();
         setContentView(R.layout.activity_main);
         listComments.add(new Comment("Pierre", 1, "blablabla"));
         listComments.add(new Comment("Pierre", 2, "drftghjklm"));
@@ -54,6 +64,16 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
         listViewComments.setAdapter(commentAdapter);
         listViewComments.setLayoutManager(new LinearLayoutManager(this));
 
+        /* UPDATE SELON LE FILM*/
+
+        TextView descriptionView = findViewById(R.id.textView6);
+        TextView titreView = findViewById(R.id.textView4);
+        Entity myMovie = MovieManager.getInstance().getMovieById(ID_FILM);
+        if(myMovie instanceof Film ){
+            System.out.println(ID_FILM);
+            descriptionView.setText(((Film) myMovie).getDescription());
+            titreView.setText(((Film) myMovie).getTitre());
+        }
 
 
         ImageButton close = findViewById(R.id.close);
@@ -82,9 +102,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, CategoryActivity.class));
 
-                /*
+
+
                 //cas ou on aime déja
                 if(like.getCurrentTextColor() == getResources().getColor( R.color.my_blue ) ){
                     like.setBackground(getResources().getDrawable(R.drawable.button));
@@ -96,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
                     like.setTextColor(getResources().getColor( R.color.my_blue ));
                     like.setCompoundDrawablesWithIntrinsicBounds( R.drawable.likeblue, 0, 0, 0);
                 }
-                */
+
             }
         });
 

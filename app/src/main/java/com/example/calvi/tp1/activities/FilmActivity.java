@@ -1,5 +1,6 @@
 package com.example.calvi.tp1.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import com.example.calvi.tp1.adapters.LettreAdapter;
 import com.example.calvi.tp1.entities.Film;
 import com.example.calvi.tp1.entities.Lettre;
 import com.example.calvi.tp1.interfaces.Entity;
+import com.example.calvi.tp1.interfaces.OnClickManager;
 import com.example.calvi.tp1.interfaces.RecyclerViewManager;
 import com.example.calvi.tp1.managers.MovieManager;
 
@@ -18,7 +20,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class FilmActivity extends AppCompatActivity implements RecyclerViewManager {
+public class FilmActivity extends AppCompatActivity implements RecyclerViewManager, OnClickManager {
 
     private ArrayList<Entity> listFilms = new ArrayList<Entity>();
     private ArrayList<Entity> listLettres = new ArrayList<Entity>();
@@ -43,17 +45,18 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
 */
 
 
-        listFilms.add(new Film("Test", "dsghfds"));
-        listFilms.add(new Film("Poi", "dsghfds"));
-        listFilms.add(new Film("Rs", "dsghfds"));
-        listFilms.add(new Film("Test", "dsghfds"));
-        listFilms.add(new Film("Test", "dsghfds"));
-        MovieManager.getInstance().setListFilm(listFilms);
+        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 0 ));
+        MovieManager.getInstance().addFilm(new Film("Poi", "dsghfds", 1));
+        MovieManager.getInstance().addFilm(new Film("Rs", "dsghfds", 2));
+        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 3));
+        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 4));
+
 
 
         RecyclerView listViewFilms = findViewById(R.id.recyclerViewFilms);
 
         FilmAdapter adapter = new FilmAdapter();
+        adapter.setOnClickManager(this);
         adapter.setRecyclerViewManager(this);
         listViewFilms.setAdapter(adapter);
         listViewFilms.setLayoutManager(new LinearLayoutManager(this));
@@ -67,5 +70,14 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
     @Override
     public int getNumberOfEntities() {
         return MovieManager.getInstance().getMovies().size();
+    }
+
+    @Override
+    public void onClickItemFilm(Film film) {
+        System.out.println(film.getId());
+        Intent i = new Intent(FilmActivity.this, MainActivity.class);
+
+        i.putExtra("ID_FILM", film.getId());
+        startActivity(i);
     }
 }

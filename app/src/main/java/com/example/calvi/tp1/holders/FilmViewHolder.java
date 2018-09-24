@@ -8,12 +8,15 @@ import android.widget.TextView;
 
 import com.example.calvi.tp1.R;
 import com.example.calvi.tp1.entities.Film;
+import com.example.calvi.tp1.interfaces.OnClickManager;
 
 public class FilmViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView filmImage;
     private TextView filmTitre;
     private TextView filmDescription;
+    private OnClickManager onClickManager;
+
 
     public FilmViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -24,8 +27,26 @@ public class FilmViewHolder extends RecyclerView.ViewHolder {
 
     public void layoutForFilm (Film film) {
 
+        final Film movie = film;
         filmImage.setImageResource(R.drawable.user);
         filmTitre.setText(film.getTitre());
         filmDescription.setText(film.getDescription());
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickManager.onClickItemFilm(movie);
+            }
+        });
+
+
+    }
+
+    public OnClickManager getOnClickManager() {
+        return onClickManager;
+    }
+
+    public void setOnClickManager(OnClickManager onClickManager) {
+        this.onClickManager = onClickManager;
     }
 }

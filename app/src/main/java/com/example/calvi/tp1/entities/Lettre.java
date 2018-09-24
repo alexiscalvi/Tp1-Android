@@ -28,4 +28,9 @@ public class Lettre implements Entity{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    @Override
+    public int getId() {
+        return 0;
+    }
 }

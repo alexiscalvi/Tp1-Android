@@ -1,5 +1,6 @@
 package com.example.calvi.tp1.managers;
 
+import com.example.calvi.tp1.entities.Film;
 import com.example.calvi.tp1.interfaces.Entity;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ public class MovieManager {
     /** Constructeur privé */
     private MovieManager()
     {}
-    private ArrayList<Entity> listFilm;
+    private ArrayList<Entity> listFilm = new ArrayList<Entity>();
 
     /** Instance unique pré-initialisée */
     private static MovieManager INSTANCE = new MovieManager();
@@ -20,7 +21,9 @@ public class MovieManager {
     }
 
     public void addFilm(Entity film){
-        listFilm.add(film);
+        if(film instanceof Film){
+            listFilm.add(film.getId(), film);
+        }
     }
 
     public ArrayList<Entity> getMovies(){
@@ -31,7 +34,4 @@ public class MovieManager {
         return listFilm.get(index);
     }
 
-    public void setListFilm(ArrayList<Entity> listFilm) {
-        this.listFilm = listFilm;
-    }
 }
