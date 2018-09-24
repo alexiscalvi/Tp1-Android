@@ -1,6 +1,7 @@
 package com.example.calvi.tp1.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onClick(View v) {
 
+                startActivity(new Intent(MainActivity.this, CategoryActivity.class));
+
+                /*
                 //cas ou on aime déja
                 if(like.getCurrentTextColor() == getResources().getColor( R.color.my_blue ) ){
                     like.setBackground(getResources().getDrawable(R.drawable.button));
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
                     like.setTextColor(getResources().getColor( R.color.my_blue ));
                     like.setCompoundDrawablesWithIntrinsicBounds( R.drawable.likeblue, 0, 0, 0);
                 }
+                */
             }
         });
 
