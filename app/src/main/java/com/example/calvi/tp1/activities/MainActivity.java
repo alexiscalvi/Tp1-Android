@@ -1,7 +1,9 @@
 package com.example.calvi.tp1.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
         onResume();
         setContentView(R.layout.activity_main);
         listComments.add(new Comment("Pierre", 1, "blablabla"));
-        listComments.add(new Comment("Pierre", 2, "drftghjklm"));
-        listComments.add(new Comment("Pierre", 1, "blablabla"));
+        listComments.add(new Comment("Michel", 2, "drftghjklm"));
+        listComments.add(new Comment("Dédé", 1, "blablabla"));
         listComments.add(new Comment("Pierre", 2, "drftghjklm"));
         listComments.add(new Comment("Pierre", 1, "blablabla"));
         listComments.add(new Comment("Pierre", 2, "drftghjklm"));
@@ -138,6 +140,21 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewManag
                 champText.setText("");
                 AlertDialog popUp = builder.create();
                 popUp.show();*/
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String text = ((Film)MovieManager.getInstance().getMovieById(ID_FILM)).getTitre();
+                Uri uri = Uri.parse("android.resource://" + getPackageName()
+                        + "/drawable/" + "movie");
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+                shareIntent.setType("image/jpeg");
+                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                startActivity(Intent.createChooser(shareIntent, "Partager"));
             }
         });
 

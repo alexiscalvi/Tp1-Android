@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.example.calvi.tp1.R;
 import com.example.calvi.tp1.adapters.FilmAdapter;
 import com.example.calvi.tp1.adapters.LettreAdapter;
+import com.example.calvi.tp1.entities.Category;
 import com.example.calvi.tp1.entities.Film;
 import com.example.calvi.tp1.entities.Lettre;
 import com.example.calvi.tp1.interfaces.Entity;
@@ -29,27 +30,10 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
 
         super.onCreate(savedInstanceState);
    setContentView(R.layout.film_activity);
-   /*
 
-        char lettres[] = {'a','b','c','d','e','f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'};
-
-        for(char lettre : lettres){
-            listLettres.add(new Lettre(String.valueOf(lettre), "0"));
-        }
-        RecyclerView listViewLettres = findViewById(R.id.recyclerViewLettre);
-
-        LettreAdapter lettreAdapter = new LettreAdapter();
-        lettreAdapter.setRecyclerViewManager(this);
-        listViewLettres.setAdapter(lettreAdapter);
-        listViewLettres.setLayoutManager(new LinearLayoutManager(this));
-*/
-
-
-        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 0 ));
-        MovieManager.getInstance().addFilm(new Film("Poi", "dsghfds", 1));
-        MovieManager.getInstance().addFilm(new Film("Rs", "dsghfds", 2));
-        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 3));
-        MovieManager.getInstance().addFilm(new Film("Test", "dsghfds", 4));
+        MovieManager.getInstance().addFilm(new Film("Les évadés", "Un banquier est condamné à perpétuité pour le meurtre de sa femme...", 0 ));
+        MovieManager.getInstance().addFilm(new Film("Mon roi", "Un pervers narcissique...", 1));
+        MovieManager.getInstance().addFilm(new Film("Le roi lion", "A la savanne...", 2));
 
 
 
@@ -80,4 +64,11 @@ public class FilmActivity extends AppCompatActivity implements RecyclerViewManag
         i.putExtra("ID_FILM", film.getId());
         startActivity(i);
     }
+
+    @Override
+    public void onClickItemCategorie(Category category) {
+
+    }
+
+
 }

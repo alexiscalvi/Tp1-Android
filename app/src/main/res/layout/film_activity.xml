@@ -10,27 +10,17 @@
     tools:showIn="@layout/category_activity">
 
     <com.example.calvi.tp1.entities.Header
-        android:id="@+id/header"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        app:mainTitle="Categories"
-        app:backTitle="Back"/>
+        android:id="@+id/header"
+        app:mainTitle="@string/titre"
+        app:backTitle="@string/retour"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!--
-                <android.support.v7.widget.RecyclerView
 
-                    android:id="@+id/recyclerViewLettre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/my_blue">
-
-                </android.support.v7.widget.RecyclerView>
-
-         -->
                 <android.support.v7.widget.RecyclerView
 
                     android:id="@+id/recyclerViewFilms"
